@@ -1,0 +1,37 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<types:mule xmlns:types="http://www.mulesoft.org/schema/mule/types">
+  <types:catalog>
+    <types:type name="student-get-response" format="json">
+      <types:shape format="weave" example="api/examples/students-get-ex.json"><![CDATA[%dw 2.0
+type student_get_response = Array<{|
+  id: Number {"typeId": "int"}, 
+  fName: String, 
+  lName: String, 
+  major: String, 
+  year: String, 
+  startDate: String
+|}> {"MetadataFormat": "json",
+"example": "[{\"id\":123456,\"fName\":\"John\",\"lName\":\"Doe\",\"major\":\"Aerospace Engineering\",\"year\":\"Freshman\",\"startDate\":\"2018-09-01\"},{\"id\":987654,\"fName\":\"Jane\",\"lName\":\"Doe\",\"major\":\"Computer Science\",\"year\":\"Senior\",\"startDate\":\"2015-09-01\"}]"}
+
+]]></types:shape>
+    </types:type>
+  </types:catalog>
+  <types:enrichment select="#06e0c4dc-8eba-42da-9002-c9f78c0a8f38">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="student-get-response"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+  <types:enrichment select="#deea2c24-77fe-46ed-99f8-109bb011c7dd">
+    <types:processor-declaration>
+      <types:output-event>
+        <types:message>
+          <types:payload type="student-get-response"/>
+        </types:message>
+      </types:output-event>
+    </types:processor-declaration>
+  </types:enrichment>
+</types:mule>

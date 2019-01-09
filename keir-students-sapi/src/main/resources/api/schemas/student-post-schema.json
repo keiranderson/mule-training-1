@@ -1,0 +1,26 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "required": [
+    "fName",
+    "lName",
+    "startDate"
+  ],
+  "properties": {
+    "fName": {
+      "type": "string"
+    },
+    "lName": {
+      "type": "string"
+    },
+    "major": {
+      "type": "string"
+    },
+    "year": {
+      "type": "string"
+    },
+    "startDate": {
+      "type": "string"
+    }
+  }
+}

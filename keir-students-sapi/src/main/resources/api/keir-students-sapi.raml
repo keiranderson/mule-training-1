@@ -1,0 +1,89 @@
+#%RAML 1.0
+version: v1
+baseUri: https://mocksvc.mulesoft.com/mocks/0b7f952d-0734-4cd6-8ad9-42d92d4b2d1c # 
+title: keir-students-sapi
+description: This API exposes student administrative and contact info
+
+traits:
+  client-id-required:
+    headers:
+      client_id:
+        type: string
+      client_secret:
+        type: string
+
+# Resources
+/students:
+  is: [client-id-required]
+  get:
+    description: Retrieve all student records
+    responses: 
+      200:
+        body:
+          application/json:
+            example: !include examples/students-get-ex.json
+  post:
+    description: Add new student record
+    body:
+      application/json:
+        type: !include schemas/student-post-schema.json
+    responses: 
+      200:
+        body:
+          application/json:
+  /{studentId}:
+    get:
+      description: Retrieve single student record based on ID
+      responses: 
+        200:
+          body: 
+            application/json:
+              example: !include examples/student-get-ex.json
+    put:
+      description: Update student record by ID
+      body:
+        application/json:
+          type: !include schemas/student-post-schema.json
+      responses: 
+        200:
+          body:
+            application/json:
+/contacts:
+  is: [client-id-required]
+  get:
+    description: Retrieve student contact record for specified studentId
+    queryParameters: 
+      studentId: 
+        type: string
+        required: true
+    responses: 
+      200:
+        body:
+          application/json:
+            example: !include examples/contacts-get-ex.json
+  post:
+    description: Add new student contact record
+    body:
+      application/json:
+        type: !include schemas/contact-post-schema.json
+    responses: 
+      200:
+        body:
+          application/json:
+  /{contactId}:
+    get:
+      description: Retrieve student contact record based on contact ID
+      responses: 
+        200:
+          body: 
+            application/json:
+              example: !include examples/contact-get-ex.json
+    put:
+      description: Update contact record by contact ID
+      body:
+        application/json:
+          type: !include schemas/contact-put-schema.json
+      responses: 
+        200:
+          body:
+            application/json:

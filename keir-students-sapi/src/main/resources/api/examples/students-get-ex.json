@@ -1,0 +1,18 @@
+[
+  {
+    "id": 123456,
+    "fName": "John",
+    "lName": "Doe",
+    "major": "Aerospace Engineering",
+    "year": "Freshman",
+    "startDate": "2018-09-01"
+  },
+  {
+    "id": 987654,
+    "fName": "Jane",
+    "lName": "Doe",
+    "major": "Computer Science",
+    "year": "Senior",
+    "startDate": "2015-09-01"
+  }
+]

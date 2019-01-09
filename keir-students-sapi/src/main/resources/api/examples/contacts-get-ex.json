@@ -1,0 +1,16 @@
+[
+  {
+    "id": 101,
+    "studentId": 123456,
+    "mobile": "5555555555",
+    "email": "john.doe@example.com",
+    "notificationPreference": "mobile"
+  },
+  {
+    "id": 102,
+    "studentId": 987654,
+    "mobile": "6125555555",
+    "email": "jane.doe@example.com",
+    "notificationPreference": "email"
+  }
+]

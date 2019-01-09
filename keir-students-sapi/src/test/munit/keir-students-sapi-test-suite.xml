@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<mule xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:munit="http://www.mulesoft.org/schema/mule/munit" xmlns:munit-tools="http://www.mulesoft.org/schema/mule/munit-tools"
+	xmlns="http://www.mulesoft.org/schema/mule/core" xmlns:doc="http://www.mulesoft.org/schema/mule/documentation"
+	xsi:schemaLocation="
+		http://www.mulesoft.org/schema/mule/core http://www.mulesoft.org/schema/mule/core/current/mule.xsd
+		http://www.mulesoft.org/schema/mule/munit http://www.mulesoft.org/schema/mule/munit/current/mule-munit.xsd
+		http://www.mulesoft.org/schema/mule/munit-tools  http://www.mulesoft.org/schema/mule/munit-tools/current/mule-munit-tools.xsd">
+	<munit:config name="keir-students-sapi-test-suite.xml" />
+	<munit:test name="keir-students-sapi-test-suite-get:\students\(studentId):keir-students-sapi-configTest" description="Test" doc:id="29e8ac7a-988b-40cf-b1ae-92ba1a288a0e" >
+		<munit:behavior >
+			<munit-tools:mock-when doc:name="Mock when" doc:id="17fea0d1-4572-41d2-bdd7-b3822110c019" processor="db:select">
+				<munit-tools:then-return >
+					<munit-tools:payload value='#[[
+    {
+        "STUDENT_ID": 5,
+        "MAJOR": "Aerospace Engineering",
+        "YEAR": "Freshman",
+        "LAST_NAME": "Doe",
+        "START_DATE": "2018-09-01T00:00:00",
+        "FIRST_NAME": "John"
+    }
+]]' />
+				</munit-tools:then-return>
+			</munit-tools:mock-when>
+		</munit:behavior>
+		<munit:execution >
+			<flow-ref doc:name="get:\students\(studentId):keir-students-sapi-config" doc:id="7878b65c-4d23-4ade-b293-bc1f7325ab3f" name="get:\students\(studentId):keir-students-sapi-config"/>
+		</munit:execution>
+		<munit:validation >
+			<munit-tools:assert-that doc:name="Assert that" doc:id="79137d87-c9c6-445f-8ff3-75027cc8cf0a" expression="#[payload]" is="#[MunitTools::withMediaType('application/json')]" message="Payload type is not JSON"/>
+		</munit:validation>
+	</munit:test>
+
+
+</mule>

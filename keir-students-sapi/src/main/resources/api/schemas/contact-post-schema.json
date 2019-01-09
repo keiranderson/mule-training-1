@@ -1,0 +1,31 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "type": "object",
+  "anyOf": [
+    {
+      "required": ["mobile"]
+    },
+    {
+      "required": ["email"]
+    }
+  ],
+  "required": [
+    "studentId",
+    "notificationPreference"
+  ],
+  "properties": {
+    "studentId": {
+      "type": "integer"
+    },
+    "mobile": {
+      "type": "string"
+    },
+    "email": {
+      "type": "string"
+    },
+    "notificationPreference": {
+      "type": "string",
+      "enum": ["email", "mobile"]
+    }
+  }
+}
