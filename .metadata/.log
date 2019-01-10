@@ -200,3 +200,6 @@ Java Model Exception: Java Model Status [C:\AnypointStudio\plugins\org.mule.tool
 	at java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:157)
 !SUBENTRY 1 org.eclipse.jdt.core 4 969 2019-01-09 11:16:53.520
 !MESSAGE C:\AnypointStudio\plugins\org.mule.tooling.server.4.1.4.ee_7.3.0.201810161635\mule\lib\mule\repository does not exist
+
+!ENTRY org.mule.tooling.ui.contribution.munit 1 1 2019-01-09 11:39:01.651
+!MESSAGE Deleting MUnit temporary folder in C:\Users\KEIR~1.AND\AppData\Local\Temp\munit-temp-dir
