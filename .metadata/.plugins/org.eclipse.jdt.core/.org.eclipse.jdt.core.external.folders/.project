@@ -14,5 +14,10 @@
 			<type>2</type>
 			<location>C:/AnypointStudio/plugins/org.mule.tooling.server.4.1.4.ee_7.3.0.201810161635/mule/lib/boot/exec</location>
 		</link>
+		<link>
+			<name>.link1</name>
+			<type>2</type>
+			<location>C:/AnypointStudio/plugins/org.mule.tooling.server.4.1.4.ee_7.3.0.201810161635/mule/lib/mule/repository</location>
+		</link>
 	</linkedResources>
 </projectDescription>

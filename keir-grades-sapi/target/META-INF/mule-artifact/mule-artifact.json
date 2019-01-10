@@ -1,0 +1,29 @@
+{
+  "configs": [
+    "keir-grades-sapi.xml"
+  ],
+  "secureProperties": [],
+  "redeploymentEnabled": true,
+  "name": "com.mycompany:keir-grades-sapi:1.0.0-SNAPSHOT",
+  "minMuleVersion": "4.1.4",
+  "requiredProduct": "MULE_EE",
+  "classLoaderModelLoaderDescriptor": {
+    "id": "mule",
+    "attributes": {
+      "exportedPackages": [],
+      "exportedResources": [
+        "api/examples/assignments-ex.json",
+        "api/examples/courses-ex.json",
+        "api/examples/grades-ex.json",
+        "api/keir-grades-sapi.raml",
+        "application-types.xml",
+        "lo-keir-grades-sapi.properties",
+        "log4j2.xml"
+      ]
+    }
+  },
+  "bundleDescriptorLoader": {
+    "id": "mule",
+    "attributes": {}
+  }
+}

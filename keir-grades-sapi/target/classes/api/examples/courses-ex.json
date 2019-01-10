@@ -1,0 +1,16 @@
+[
+  {
+    "courseId": 1,
+    "courseDept": "HIST",
+    "courseCode": "101",
+    "courseName": "History 1",
+    "instructor": "Cuthbert Binns"
+  },
+  {
+    "courseId": 2,
+    "courseDept": "CHEM",
+    "courseCode": "201",
+    "courseName": "Chemistry 2",
+    "instructor": "Weyland Nolan"
+  }
+]

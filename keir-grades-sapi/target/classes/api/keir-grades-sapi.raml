@@ -1,0 +1,32 @@
+#%RAML 1.0
+version: v1
+baseUri: https://mocksvc.mulesoft.com/mocks/d069ac1c-348c-4039-804d-f9f37dcc43de # 
+title: keir-grades-sapi
+description: Exposes the Student Grades service
+
+# Resources
+/courses:
+  get:
+    description: Returns all courses available
+    responses: 
+      200:
+        body: 
+          application/xml:
+            example: !include examples/courses-ex.json
+/assignments/{courseId}:
+  get:
+    description: Returns list of assignments for specified course
+    responses: 
+      200:
+        body: 
+          application/xml:
+            example: !include examples/assignments-ex.json
+/grades/{studentId}:
+  get:
+    description: Returns all grades for specified student
+    responses: 
+      200:
+        body: 
+          application/json:
+            example: !include examples/grades-ex.json
+    
